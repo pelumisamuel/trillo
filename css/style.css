@@ -42,6 +42,9 @@ Grey dark 3: #999
 html {
   box-sizing: border-box;
   font-size: 62.5%; }
+  @media screen and (max-width: 63.75em) {
+    html {
+      font-size: 50%; } }
 
 body {
   font-family: 'Open Sans', sans-serif;
@@ -58,6 +61,11 @@ body {
   background-color: #fff;
   box-shadow: var(--shadow-dark);
   min-height: 50rem; }
+  @media only screen and (max-width: 75em) {
+    .container {
+      margin: 0;
+      max-width: 100%;
+      width: 100%; } }
 
 .header {
   font-size: 1.4rem;
@@ -70,6 +78,9 @@ body {
 
 .content {
   display: flex; }
+  @media screen and (max-width: 50em) {
+    .content {
+      flex-direction: column; } }
 
 .sidebar {
   background-color: var(--Grey-color-dark-1);
@@ -87,13 +98,16 @@ body {
   padding: 2.5rem;
   background-color: var(--Grey-color-light-1);
   border-bottom: var(--line); }
+  @media screen and (max-width: 35em) {
+    .detail {
+      flex-direction: column; } }
 
 .description {
   background-color: #fff;
   box-shadow: var(--shadow-light);
   padding: 3rem;
   flex: 0 0 60%;
-  margin-right: 4.5rem; }
+  margin-right: 2.5rem; }
 
 .user-reviews {
   flex: 1;
@@ -182,11 +196,22 @@ body {
   font-size: 1.4rem;
   list-style: none;
   margin-top: 3.5rem; }
+  @media screen and (max-width: 50em) {
+    .side-nav {
+      display: flex;
+      align-content: center;
+      margin: 0; } }
   .side-nav__item {
     color: #fff;
     position: relative; }
+    @media screen and (max-width: 50em) {
+      .side-nav__item {
+        flex: 1; } }
     .side-nav__item:not(:last-child) {
       margin-bottom: 0.5rem; }
+      @media screen and (max-width: 50em) {
+        .side-nav__item:not(:last-child) {
+          margin-bottom: 0; } }
   .side-nav__item::before {
     content: '';
     position: absolute;
@@ -213,6 +238,9 @@ body {
     align-items: center;
     position: relative;
     z-index: 10; }
+    @media screen and (max-width: 50em) {
+      .side-nav__link:link, .side-nav__link:visited {
+        justify-content: center; } }
   .side-nav__icon {
     height: 1.75rem;
     width: 1.75rem;
@@ -224,6 +252,9 @@ body {
   color: var(--Grey-color-light-4);
   text-align: center;
   padding: 2.5rem; }
+  @media screen and (max-width: 50em) {
+    .legal {
+      display: none; } }
 
 .gallery {
   display: flex; }
@@ -337,13 +368,18 @@ body {
   font-size: 1.3rem;
   color: var(--Grey-color-dark-3);
   display: flex;
-  align-items: center; }
+  align-items: center;
+  align-content: center; }
   .recommend__count {
     margin-right: auto; }
+  .recommend__friends {
+    display: flex; }
   .recommend__photo {
     height: 4rem;
     width: 4rem;
-    border-radius: 50%; }
+    border-radius: 50%;
+    box-sizing: content-box;
+    border: 0.2rem solid #fff; }
     .recommend__photo:not(:last-child) {
       box-sizing: content-box;
       margin-right: -1.5rem;
@@ -394,13 +430,13 @@ body {
     z-index: 10; }
 
 .cta {
-  padding: 3.5rem 0;
+  padding: 2.5rem 0;
   text-align: center; }
   .cta__book-now {
     font-size: 1.5rem;
     font-weight: 300;
     text-transform: uppercase;
-    margin-bottom: 2.5rem; }
+    margin-bottom: 1.5rem; }
 
 .btn {
   font-size: 1.5rem;

@@ -118,13 +118,25 @@
   font-size: 1.4rem;
   list-style: none;
   margin-top: 3.5rem;
+  @media screen and (max-width: $bp-medium) {
+    display: flex;
+    align-content: center;
+    margin: 0;
+  }
 
   &__item {
     color: #fff;
     position: relative;
 
+    @media screen and (max-width: $bp-medium) {
+      flex: 1;
+    }
+
     &:not(:last-child) {
       margin-bottom: 0.5rem;
+      @media screen and (max-width: $bp-medium) {
+        margin-bottom: 0;
+      }
     }
   }
 
@@ -167,6 +179,10 @@
 
     position: relative;
     z-index: 10;
+
+    @media screen and (max-width: $bp-medium) {
+      justify-content: center;
+    }
   }
 
   &__icon {
@@ -184,6 +200,10 @@
   color: var(--Grey-color-light-4);
   text-align: center;
   padding: 2.5rem;
+
+  @media screen and (max-width: $bp-medium) {
+    display: none;
+  }
 }
 
 //Top section Gallery
@@ -365,15 +385,23 @@
   color: var(--Grey-color-dark-3);
   display: flex;
   align-items: center;
+  align-content: center;
 
   &__count {
     margin-right: auto;
+  }
+  &__friends {
+    display: flex;
   }
 
   &__photo {
     height: 4rem;
     width: 4rem;
     border-radius: 50%;
+
+    box-sizing: content-box;
+    // margin-right: -1.5rem;
+    border: 0.2rem solid #fff;
 
     &:not(:last-child) {
       box-sizing: content-box;
@@ -446,14 +474,14 @@
 /////////// CALL TO ACTION
 
 .cta {
-  padding: 3.5rem 0;
+  padding: 2.5rem 0;
   text-align: center;
 
   &__book-now {
     font-size: 1.5rem;
     font-weight: 300;
     text-transform: uppercase;
-    margin-bottom: 2.5rem;
+    margin-bottom: 1.5rem;
   }
 }
 

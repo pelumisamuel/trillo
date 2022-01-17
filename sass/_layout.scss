@@ -21,6 +21,15 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  @media screen and (max-width: $bp-Xsmall) {
+    font-size: 1rem;
+    flex-wrap: wrap;
+    align-content: space-between;
+    padding-top: 1rem;
+    height: 9rem;
+    border: none;
+  }
 }
 
 .content {
@@ -64,6 +73,12 @@
   padding: 3rem;
   flex: 0 0 60%;
   margin-right: 2.5rem;
+
+  @media screen and (max-width: $bp-small) {
+    width: 100%; // or margin: 0; could use width:100% without media query.
+
+    margin-bottom: 2.5rem;
+  }
 }
 .user-reviews {
   //   background-color: #fff;

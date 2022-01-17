@@ -12,6 +12,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @media screen and (max-width: $bp-Xsmall) {
+    order: 1;
+    flex: 0 0 100%;
+    background-color: var(--Grey-color-light-2);
+    padding-bottom: 0.5rem;
+  }
+
   &__input {
     font-family: inherit;
     font-size: inherit;
@@ -25,6 +33,12 @@
     margin-right: -3.5rem;
     margin-left: -1.5rem;
 
+    @media screen and (max-width: $bp-Xsmall) {
+      border-bottom: 1.5px solid var(--Grey-color-light-4);
+      border-radius: 0;
+      //padding: 0.6rem 2rem;
+    }
+
     &:focus {
       width: 100%;
       outline: none;
@@ -33,11 +47,14 @@
   }
   &__input:focus + &__button {
     background-color: var(--Grey-color-light-3);
+    color: var(--Grey-color-light-1);
+    //color: red;
   }
 
   &::-webkit-input-placeholder {
     font-weight: 100;
-    color: var(--Grey-color-light-4);
+
+    color: var(--Grey-color-light-1);
   }
 
   &__button {
@@ -78,6 +95,10 @@
 
   & > *:hover {
     background-color: var(--Grey-color-light-2);
+  }
+
+  &__user-name {
+    color: black;
   }
 
   &__icon-box {
@@ -122,6 +143,7 @@
     display: flex;
     align-content: center;
     margin: 0;
+    font-size: 1rem;
   }
 
   &__item {
@@ -183,6 +205,12 @@
     @media screen and (max-width: $bp-medium) {
       justify-content: center;
     }
+
+    @media screen and (max-width: $bp-small) {
+      flex-direction: column;
+      // justify-content: center;
+      padding: 1rem 1.5rem;
+    }
   }
 
   &__icon {
@@ -190,6 +218,13 @@
     width: 1.75rem;
     fill: currentColor;
     margin-right: 2rem;
+
+    @media screen and (max-width: $bp-small) {
+      margin: 0;
+      margin-bottom: 0.5rem;
+      width: 1.5rem;
+      height: 1.5rem;
+    }
   }
 }
 
@@ -225,12 +260,25 @@
   align-items: center;
   border-bottom: 0.2rem solid var(--Grey-color-light-2);
 
+  @media screen and (max-width: $bp-Xsmall) {
+    //flex-wrap: wrap;
+    padding: 1rem 0rem;
+  }
   &__heading {
     font-size: 2.25rem;
     font-weight: 300;
     text-transform: uppercase;
     letter-spacing: 1px;
     padding: 1.5rem 3rem;
+
+    @media screen and (max-width: $bp-small) {
+      font-size: 1.75rem;
+      padding: 1rem 3rem;
+    }
+    @media screen and (max-width: $bp-Xsmall) {
+      margin-right: auto;
+      padding: 1rem 0rem 1rem 3rem;
+    }
   }
 
   &__stars {
@@ -242,19 +290,33 @@
     height: 2.25rem;
     width: 2.25rem;
     fill: darkgoldenrod;
+
+    @media screen and (max-width: $bp-small) {
+      height: 1.5rem;
+      width: 1.5rem;
+    }
   }
 
   &__location {
     font-size: 1.2rem;
-
+    padding: 0 1rem;
     display: flex;
     vertical-align: center;
+
+    @media screen and (max-width: $bp-small) {
+      font-size: 1rem;
+    }
   }
 
   &__icon-location {
     margin-right: 0.5rem;
     height: 2.25rem;
     width: 2.25rem;
+    fill: var(--primary-color);
+    @media screen and (max-width: $bp-small) {
+      height: 1.5rem;
+      width: 1.5rem;
+    }
   }
 
   &__rating {
@@ -268,17 +330,28 @@
     align-items: center;
     justify-content: center;
     align-self: stretch;
+    @media screen and (max-width: $bp-small) {
+      padding: 0 1.5rem;
+    }
+    order: 2;
   }
 
   &__rating-average {
     font-size: 2.25rem;
     font-weight: 300;
     margin-bottom: -3px;
+    @media screen and (max-width: $bp-small) {
+      font-size: 1.8rem;
+    }
   }
 
   &__rating-count {
     font-size: 0.8rem;
     text-transform: uppercase;
+  }
+
+  @media screen and (max-width: $bp-small) {
+    font-size: 0.5rem;
   }
 }
 
@@ -367,7 +440,7 @@
     // older browsers
     //background-image: url(../img/chevron-thin-right.svg);
 
-    // newer browsers using masks
+    // newer browsers uses masks
     background-color: var(--primary-color);
 
     -webkit-mask-image: url(../img/chevron-thin-right.svg);
@@ -422,6 +495,10 @@
   border-radius: 5%;
   position: relative;
   overflow: hidden;
+
+  @media screen and (max-width: $bp-small) {
+    margin-bottom: 2.5rem;
+  }
 
   &__text {
     position: relative;
